@@ -8,7 +8,8 @@
 #include <vector>
 
 #include <cpr/cpr.h>
-#include <nlohmann//json.hpp>
+#include <cpr/util.h>
+#include <nlohmann/json.hpp>
 
 namespace github
 {

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "../github/github.h"
+#include "../imgui/drawing/overlay.h"
 
 using namespace github;
 using namespace github::filesystem;
@@ -9,6 +10,5 @@ using namespace std::filesystem;
 
 int main()
 {
-	//std::cout << CopyGithubFolder(current_path() / "accounts" / GetUsername()) << "\n";
-	Restart();
+	gui::Create();
 }
