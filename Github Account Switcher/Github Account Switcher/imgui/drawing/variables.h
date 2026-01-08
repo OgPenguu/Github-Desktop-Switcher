@@ -13,7 +13,7 @@ namespace gui
 	inline UINT                     a = 0, b = 0;
 	inline ID3D11RenderTargetView* g_mainRenderTargetView = nullptr;
 	inline UINT width = 600, height = 350;
-	inline UINT x = 0, y = 0;
+	inline UINT x = 500, y = 0;
 
 	inline ImVec2 screenSize;
 

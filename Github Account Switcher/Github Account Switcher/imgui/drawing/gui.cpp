@@ -1,5 +1,4 @@
 ﻿#include "overlay.h"
-#include <algorithm>
 
 ImVec2 GetCursorPosition()
 {

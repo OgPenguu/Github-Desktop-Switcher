@@ -11,8 +11,16 @@ void gui::Create()
 	WNDCLASSEXW wc = { sizeof(wc), CS_CLASSDC, WndProc, 0L, 0L, GetModuleHandle(nullptr), nullptr, nullptr, nullptr, nullptr, L"Sheldon", nullptr };
 	::RegisterClassExW(&wc);
 
+	RECT workArea = {};
+	SystemParametersInfo(SPI_GETWORKAREA, 0, &workArea, 0);
+	gui::screenSize.x = workArea.right - workArea.left;
+	gui::screenSize.y = workArea.bottom - workArea.top;
+
+	gui::x = (gui::screenSize.x - gui::width) / 2.0f;
+	gui::y = (gui::screenSize.y - gui::height) / 2.0f;
+
 	hwnd = ::CreateWindowExW(
-		WS_EX_TOPMOST | WS_EX_TOOLWINDOW,
+		0,
 		wc.lpszClassName,
 		L"Github Account Switcher",
 		WS_POPUP,
@@ -54,9 +62,8 @@ void gui::Create()
 
 	bool done = false;
 
-	float clearColorAlpha = 0;
-	ImVec4 clearColor = ImVec4(35 / 255, 35 / 255, 35 / 255, 0);
-	int fadeDirection = 0;
+	float clearColorAlpha = 1;
+	ImVec4 clearColor = ImVec4(35.0f / 255, 35.0f / 255, 35.0f / 255, 0);
 
 	while (done == false)
 	{
@@ -100,7 +107,7 @@ void gui::Create()
 		arrayClearColor[0] = clearColor.x * clearColorAlpha / 2;
 		arrayClearColor[1] = clearColor.y * clearColorAlpha / 2;
 		arrayClearColor[2] = clearColor.z * clearColorAlpha / 2;
-		arrayClearColor[3] = clearColorAlpha / 2;
+		arrayClearColor[3] = clearColorAlpha;
 
 		context->OMSetRenderTargets(1, &g_mainRenderTargetView, nullptr);
 		context->ClearRenderTargetView(g_mainRenderTargetView, arrayClearColor);

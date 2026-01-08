@@ -8,7 +8,7 @@ using namespace github::account;
 using namespace github::program;
 using namespace std::filesystem;
 
-int main()
+int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
 {
 	gui::Create();
 }
