@@ -17,7 +17,7 @@ namespace github
 	{
 		std::string GetUsername();
 		std::string GetEmail();
-		std::vector<uint8_t> GetAvatar();
+		std::vector<uint8_t> GetAvatar(std::string email);
 	}
 	namespace filesystem
 	{

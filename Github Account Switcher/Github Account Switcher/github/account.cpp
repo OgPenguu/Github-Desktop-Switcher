@@ -28,9 +28,8 @@ std::string github::account::GetEmail()
 	auto data = GetAccountInfoFile();
 	return ExtractValue(data, "\"email\":\"");
 }
-std::vector<uint8_t> github::account::GetAvatar()
+std::vector<uint8_t> github::account::GetAvatar(std::string email)
 {
-	std::string email = GetEmail();
 	std::string url_email = cpr::util::urlEncode(email).c_str();
 	std::string url = "https://avatars.githubusercontent.com/u/e?email=" + url_email + "&s=64";
 
