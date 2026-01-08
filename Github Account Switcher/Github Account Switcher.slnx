@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Github Account Switcher/Github Account Switcher.vcxproj" />
+  <Project Path="Github Account Switcher/Github Account Switcher.vcxproj" Id="c30d5d61-0625-4b76-94d3-70d9df614e04" />
 </Solution>
